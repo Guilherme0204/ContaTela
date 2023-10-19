@@ -19,7 +19,17 @@ namespace ContaTela
             return ($"Nome: {nome} \n CPF: {cpf} \n Número da conta: {id} \n Saldo: {saldo} \n Informe seu CPF para realizar operações");
 
         }
-
+        public double depositar(double valor)
+        {
+            return saldo + valor;
+        }
+        public double saque(double valor)
+        {
+            return saldo -= valor;
+            
+         
+               
+        }
 
     }
 }

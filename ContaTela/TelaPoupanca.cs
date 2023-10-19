@@ -28,16 +28,17 @@ namespace ContaTela
         List<Poupanca> poupancas = new List<Poupanca>();
 
 
-        double valorInicial;
+        //double valorInicial;
+        Poupanca poupanca = new Poupanca(); 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            Poupanca poupanca = new Poupanca();
-            poupanca.nome = txtNome.Text;
+          
+            poupanca.nome =  txtNome.Text;
             poupanca.cpf  = txtCPF.Text;
             poupanca.id = Convert.ToInt32(txtIdConta.Text);
             poupanca.saldo = Convert.ToDouble(txtSaldo.Text);
             poupanca.dia = Convert.ToInt32(txtData.Text);
-            valorInicial = poupanca.saldo;
+            //valorInicial = poupanca.saldo;
             poupancas.Add(poupanca);
             MessageBox.Show(poupanca.exibirDados());
             txtNome.Text = "";
@@ -56,12 +57,13 @@ namespace ContaTela
             {
                 if (poupancas[i].cpf.Equals(txtCPF.Text))
                 {
-
+                    
                     double deposito = Convert.ToDouble(txtSaldo.Text);
-                    valorInicial += deposito;
-                    MessageBox.Show($"deposito{valorInicial}");
-                    txtCPF.Text = "";
-                    txtSaldo.Text = "";
+                    poupancas[i].saldo = poupancas[i].depositar(deposito);
+
+
+
+                    MessageBox.Show($"Saldo atual {poupancas[i].saldo}");
                 }
             }
        
@@ -75,15 +77,10 @@ namespace ContaTela
             {
                 if (poupancas[i].cpf.Equals(txtCPF.Text))
                 {
-
-                    double rendimento = (valorInicial * 0.1);
-                    valorInicial += rendimento;
-                   
-                 //  string exibirmsg = "";
-                   // exibirmsg += rendimento;
-                    MessageBox.Show($"Rendimento {rendimento}");
-                    txtCPF.Text = "";
-                    txtSaldo.Text = "";
+                    poupancas[i].saldo=   poupancas[i].novoSaldo();
+                    string a = "";
+                    a += poupancas[i].saldo; 
+                    MessageBox.Show(a);
                 }
             }
 
@@ -96,11 +93,12 @@ namespace ContaTela
                 if (poupancas[i].cpf.Equals(txtCPF.Text))
                 {
 
-                    double saque = valorInicial - Convert.ToDouble(txtSaldo.Text);
+                    double saque =  Convert.ToDouble(txtSaldo.Text);
+                    poupancas[i].saldo = poupancas[i].saque(saque);
 
-                    //  string exibirmsg = "";
-                    // exibirmsg += rendimento;
-                    MessageBox.Show($"Saldo atual {saque}");
+
+
+                    MessageBox.Show($"Saldo atual {poupancas[i].saldo}");
                     txtCPF.Text = "";
                     txtSaldo.Text = "";
                 }
