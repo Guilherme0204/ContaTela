@@ -9,7 +9,7 @@ namespace ContaTela
 {
     internal class Poupanca : Conta
     {
-        public int dia { get; set; }
+        public DateTime dia { get; set; }
        public double rendimento { get; set; }
         public double getSaldo()
         {
@@ -17,8 +17,11 @@ namespace ContaTela
         }
         public double novoSaldo()
         {
+           int dif = dia.Month - DateTime.Now.Month;
             rendimento = 0.1;
-            return (rendimento * saldo) + saldo;
+            double novoValor = (dif * rendimento) * saldo + saldo;
+            return novoValor;
+
         }
         
       

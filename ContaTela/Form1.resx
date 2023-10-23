@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="lbInico.Text" xml:space="preserve">
+    <value>
+Olá e seja bem-vindo ao nosso inovador banco digital! Estamos extremamente felizes por tê-lo como nosso mais novo cliente.
+
+Oferecemos dois tipos de contas para atender às suas necessidades:
+
+Conta Poupança: Com ela, você pode realizar saques, depósitos e até mesmo investir o seu dinheiro.
+
+Conta Especial: Esta opção disponibiliza um limite de cheque especial, além de oferecer facilidades como depósitos, saques e muito mais.
+
+Escolha a conta que melhor se encaixa no seu perfil e faça o seu cadastro conosco! Estamos ansiosos para acompanhá-lo nessa jornada financeira. Até logo!</value>
+  </data>
 </root>

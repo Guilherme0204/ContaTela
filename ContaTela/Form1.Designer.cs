@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPoupanca = new System.Windows.Forms.Button();
             this.bntInvestimento = new System.Windows.Forms.Button();
+            this.btnPoupanca = new System.Windows.Forms.Button();
             this.pnlTelas = new System.Windows.Forms.Panel();
+            this.lbInico = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.pnlTelas.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -43,17 +46,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(240, 703);
             this.panel1.TabIndex = 0;
-            // 
-            // btnPoupanca
-            // 
-            this.btnPoupanca.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPoupanca.Location = new System.Drawing.Point(3, 107);
-            this.btnPoupanca.Name = "btnPoupanca";
-            this.btnPoupanca.Size = new System.Drawing.Size(203, 81);
-            this.btnPoupanca.TabIndex = 0;
-            this.btnPoupanca.Text = "Poupança";
-            this.btnPoupanca.UseVisualStyleBackColor = true;
-            this.btnPoupanca.Click += new System.EventHandler(this.btnPoupanca_Click);
             // 
             // bntInvestimento
             // 
@@ -66,12 +58,35 @@
             this.bntInvestimento.UseVisualStyleBackColor = true;
             this.bntInvestimento.Click += new System.EventHandler(this.bntInvestimento_Click);
             // 
+            // btnPoupanca
+            // 
+            this.btnPoupanca.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPoupanca.Location = new System.Drawing.Point(3, 107);
+            this.btnPoupanca.Name = "btnPoupanca";
+            this.btnPoupanca.Size = new System.Drawing.Size(203, 81);
+            this.btnPoupanca.TabIndex = 0;
+            this.btnPoupanca.Text = "Poupança";
+            this.btnPoupanca.UseVisualStyleBackColor = true;
+            this.btnPoupanca.Click += new System.EventHandler(this.btnPoupanca_Click);
+            // 
             // pnlTelas
             // 
+            this.pnlTelas.Controls.Add(this.lbInico);
             this.pnlTelas.Location = new System.Drawing.Point(277, 3);
             this.pnlTelas.Name = "pnlTelas";
-            this.pnlTelas.Size = new System.Drawing.Size(1060, 703);
+            this.pnlTelas.Size = new System.Drawing.Size(1362, 703);
             this.pnlTelas.TabIndex = 1;
+            this.pnlTelas.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTelas_Paint);
+            // 
+            // lbInico
+            // 
+            this.lbInico.AutoSize = true;
+            this.lbInico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInico.Location = new System.Drawing.Point(43, 151);
+            this.lbInico.Name = "lbInico";
+            this.lbInico.Size = new System.Drawing.Size(1271, 220);
+            this.lbInico.TabIndex = 0;
+            this.lbInico.Text = resources.GetString("lbInico.Text");
             // 
             // Form1
             // 
@@ -82,7 +97,10 @@
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
+            this.pnlTelas.ResumeLayout(false);
+            this.pnlTelas.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -93,6 +111,7 @@
         private System.Windows.Forms.Button bntInvestimento;
         private System.Windows.Forms.Button btnPoupanca;
         private System.Windows.Forms.Panel pnlTelas;
+        private System.Windows.Forms.Label lbInico;
     }
 }
 

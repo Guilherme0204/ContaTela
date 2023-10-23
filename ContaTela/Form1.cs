@@ -26,8 +26,11 @@ namespace ContaTela
                 TopLevel = false,
                 Dock = DockStyle.Fill,
             };
+            lbInico.Visible = false;
             pnlTelas.Controls.Add(tela);
             tela.Show();
+
+            MessageBox.Show("Informe seus dados para se cadastrar e informe um valor de saldo para ativar a conta");
         }
 
         private void bntInvestimento_Click(object sender, EventArgs e)
@@ -39,8 +42,20 @@ namespace ContaTela
                 TopLevel = false,
                 Dock = DockStyle.Fill,
             };
+            lbInico.Visible = false;
+
             pnlTelas.Controls.Add(tela);
             tela.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnlTelas_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
